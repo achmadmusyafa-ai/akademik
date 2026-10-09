@@ -1,48 +1,35 @@
 import { useState } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Topbar from './components/Topbar'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import Schedule from './components/Schedule'
-import Tahfidz from './components/Tahfidz'
-import SideWidgets from './components/SideWidgets'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const { pathname } = useLocation()
+  const placeholder = pathname === '/kekhasan' ? 'Cari santri, surah, atau juz...' : undefined
   return (
-    <div className="bg-[#F7FAF9] text-on-surface antialiased text-[14px] leading-5 flex min-h-screen">
+    <div className="bg-[#F7FAF9] text-on-surface antialiased text-[14px] leading-5 flex min-h-screen selection:bg-secondary-container selection:text-primary">
       <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
-
       <div className="lg:ml-[260px] flex-1 flex flex-col min-w-0">
-        <Topbar onMenu={() => setMenuOpen(true)} />
-
+        <Topbar onMenu={() => setMenuOpen(true)} placeholder={placeholder} />
         <main className="p-4 sm:p-8 max-w-[1440px] w-full mx-auto space-y-7">
-          <Hero />
-          <Stats />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
-            <div className="lg:col-span-8 space-y-7">
-              <Schedule />
-              <Tahfidz />
-            </div>
-            <div className="lg:col-span-4">
-              <SideWidgets />
-            </div>
-          </div>
-
-          <footer className="pt-6 border-t border-outline-variant/40 flex flex-col sm:flex-row items-center justify-between text-[11px] font-bold text-outline gap-3 pb-4">
-            <div>© 2024 SDIT Balikpapan Islamic School • Sistem Informasi Akademik &amp; Portal Mutaba&apos;ah Islami Terpadu.</div>
-            <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-tertiary-fixed" />
-                Server Balikpapan: Optimal (Ping 14ms)
-              </span>
-              <span>Versi 4.8.2-Merdeka</span>
-            </div>
-          </footer>
+          <Outlet />
         </main>
+        <footer className="mt-auto px-4 sm:px-8 py-4 bg-surface-container-lowest border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-outline">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5 text-[11px] font-bold text-[#1A5C55]">
+              <span className="w-2 h-2 rounded-full bg-[#1A5C55] animate-pulse" />
+              Server SDIT Balikpapan Online
+            </span>
+            <span>•</span>
+            <span>SIAKAD SDIT Balikpapan Islamic School v4.12.0</span>
+          </div>
+          <div>
+            <span>Sistem Penjaminan Mutu Tahfidz &amp; Karakter Qur&apos;ani © 2024</span>
+          </div>
+        </footer>
       </div>
     </div>
   )
 }
+

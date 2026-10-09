@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Icon } from './ui'
 
-export default function Topbar({ onMenu }) {
+export default function Topbar({ onMenu, placeholder, compactSearch }) {
   const [q, setQ] = useState('')
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between w-full min-h-16 px-4 sm:px-6 py-2 gap-3 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
@@ -15,7 +15,7 @@ export default function Topbar({ onMenu }) {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="w-full pl-10 pr-4 py-2 rounded-lg bg-[#EFF7F5] border border-outline-variant text-[13px] text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-            placeholder="Cari data siswa (NISN), materi RPP, atau jadwal KBM..."
+            placeholder={placeholder ?? 'Cari data siswa (NISN), materi RPP, atau jadwal KBM...'}
             type="text"
           />
         </div>

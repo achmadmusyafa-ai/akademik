@@ -6,7 +6,7 @@ const NAV = [
   { label: 'Kekhasan SDIT', icon: 'auto_stories', to: '/kekhasan' },
   { label: 'Fasilitas Sekolah', icon: 'domain', to: '/fasilitas' },
   { label: 'Kesiswaan & Eskul', icon: 'emoji_events', to: '/kesiswaan' },
-  { label: 'PPDB & Keuangan', icon: 'payments', to: '/keuangan', dot: true },
+  { label: 'PPDB & Keuangan', icon: 'payments', to: '/administrasi', match: ['/administrasi', '/keuangan'], dot: true },
   { label: 'Pengaturan Sistem', icon: 'settings', to: '/pengaturan' }
 ]
 

@@ -5,6 +5,7 @@ import KekhasanPage from './pages/kekhasan/KekhasanPage'
 import AkademikPage from './pages/akademik/AkademikPage'
 import FasilitasPage from './pages/fasilitas/FasilitasPage'
 import KesiswaanPage from './pages/kesiswaan/KesiswaanPage'
+import AdministrasiPage from './pages/administrasi/AdministrasiPage'
 
 function Placeholder({ title }) {
   return (
@@ -26,7 +27,8 @@ export const router = createBrowserRouter([
       { path: 'kekhasan', element: <KekhasanPage /> },
       { path: 'fasilitas', element: <FasilitasPage /> },
       { path: 'kesiswaan', element: <KesiswaanPage /> },
-      { path: 'keuangan', element: <Placeholder title="PPDB & Keuangan" /> },
+      { path: 'administrasi', element: <AdministrasiPage /> },
+      { path: 'keuangan', element: <AdministrasiPage /> },
       { path: 'pengaturan', element: <Placeholder title="Pengaturan Sistem" /> },
       { path: 'panduan', element: <Placeholder title="Bantuan & Panduan" /> },
       { path: 'keluar', element: <Placeholder title="Keluar" /> }

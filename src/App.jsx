@@ -6,7 +6,7 @@ import Topbar from './components/Topbar'
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
-  const placeholder = pathname === '/akademik' || pathname === '/manajemen-kbm' ? 'Cari santri, NISN, rombel, materi KBM...' : pathname === '/kekhasan' ? 'Cari santri, surah, atau juz...' : pathname === '/fasilitas' ? 'Cari judul buku, barcode ISBN, jadwal lab, ID PC...' : pathname === '/kesiswaan' ? 'Cari santri, NISN, turnamen catur, atau eskul...' : undefined
+  const placeholder = pathname === '/akademik' || pathname === '/manajemen-kbm' ? 'Cari santri, NISN, rombel, materi KBM...' : pathname === '/kekhasan' ? 'Cari santri, surah, atau juz...' : pathname === '/fasilitas' ? 'Cari judul buku, barcode ISBN, jadwal lab, ID PC...' : pathname === '/kesiswaan' ? 'Cari santri, NISN, turnamen catur, atau eskul...' : pathname === '/administrasi' || pathname === '/keuangan' ? 'Cari nomor invoice, santri, calon siswa PPDB...' : undefined
   return (
     <div className="bg-[#F7FAF9] text-on-surface antialiased text-[14px] leading-5 flex min-h-screen selection:bg-secondary-container selection:text-primary">
       <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />

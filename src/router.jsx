@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import App from './App'
 import DashboardPage from './pages/DashboardPage'
 import KekhasanPage from './pages/kekhasan/KekhasanPage'
+import FasilitasPage from './pages/fasilitas/FasilitasPage'
 
 function Placeholder({ title }) {
   return (
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <DashboardPage /> },
       { path: 'kekhasan', element: <KekhasanPage /> },
-      { path: 'fasilitas', element: <Placeholder title="Fasilitas Sekolah" /> },
+      { path: 'fasilitas', element: <FasilitasPage /> },
       { path: 'kesiswaan', element: <Placeholder title="Kesiswaan & Eskul" /> },
       { path: 'keuangan', element: <Placeholder title="PPDB & Keuangan" /> },
       { path: 'pengaturan', element: <Placeholder title="Pengaturan Sistem" /> },

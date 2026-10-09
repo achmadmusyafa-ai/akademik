@@ -3,6 +3,7 @@ import App from './App'
 import DashboardPage from './pages/DashboardPage'
 import KekhasanPage from './pages/kekhasan/KekhasanPage'
 import FasilitasPage from './pages/fasilitas/FasilitasPage'
+import KesiswaanPage from './pages/kesiswaan/KesiswaanPage'
 
 function Placeholder({ title }) {
   return (
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
       { index: true, element: <DashboardPage /> },
       { path: 'kekhasan', element: <KekhasanPage /> },
       { path: 'fasilitas', element: <FasilitasPage /> },
-      { path: 'kesiswaan', element: <Placeholder title="Kesiswaan & Eskul" /> },
+      { path: 'kesiswaan', element: <KesiswaanPage /> },
       { path: 'keuangan', element: <Placeholder title="PPDB & Keuangan" /> },
       { path: 'pengaturan', element: <Placeholder title="Pengaturan Sistem" /> },
       { path: 'panduan', element: <Placeholder title="Bantuan & Panduan" /> },

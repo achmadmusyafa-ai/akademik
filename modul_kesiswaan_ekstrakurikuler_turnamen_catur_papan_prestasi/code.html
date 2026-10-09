@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kesiswaan &amp; Ekstrakurikuler - SDIT Balikpapan Islamic School</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#fdf6ae",
+            "surface-tint": "#0e6a64",
+            "secondary-fixed-dim": "#82d5cb",
+            "tertiary": "#20604b",
+            "outline": "#6f7977",
+            "on-primary-fixed": "#00201e",
+            "surface-dim": "#e3dc97",
+            "surface": "#fffae0",
+            "surface-container-high": "#f1eba4",
+            "on-secondary-fixed": "#00201d",
+            "inverse-primary": "#87d4cd",
+            "inverse-surface": "#353200",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a3f1e9",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#9ef2e7",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#0b513d",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#00504a",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f7f0a9",
+            "tertiary-fixed": "#b0f0d5",
+            "primary": "#00615b",
+            "on-tertiary-fixed": "#002116",
+            "on-secondary-container": "#097169",
+            "on-background": "#1e1c00",
+            "primary-fixed-dim": "#87d4cd",
+            "surface-container-highest": "#ece59f",
+            "on-surface": "#1e1c00",
+            "tertiary-fixed-dim": "#94d3b9",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#3c7963",
+            "on-surface-variant": "#3f4947",
+            "secondary-container": "#9ef2e7",
+            "surface-variant": "#ece59f",
+            "background": "#fffae0",
+            "secondary": "#006a63",
+            "surface-bright": "#fffae0",
+            "on-primary-container": "#bbfff8",
+            "inverse-on-surface": "#faf3ac",
+            "primary-container": "#287a74",
+            "on-tertiary-container": "#c0ffe4",
+            "outline-variant": "#bec9c7",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#00504b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.25rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f5f4;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bec9c7;
+      border-radius: 4px;
+    }
+    .card-shadow {
+      box-shadow: 0px 2px 8px -2px rgba(40, 122, 116, 0.06), 0px 1px 3px 0px rgba(40, 122, 116, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-[#F7FAF9] text-on-surface antialiased min-h-screen font-body-md text-body-md flex flex-col">
+<!-- Fixed SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-[260px] flex flex-col justify-between p-4 z-40 bg-surface-container-lowest dark:bg-surface border-r border-outline-variant dark:border-outline">
+<div class="flex flex-col gap-6">
+<!-- Header Brand -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm font-bold">
+<span class="material-symbols-outlined text-white" data-icon="school">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md font-bold text-primary dark:text-inverse-primary leading-tight">SDIT Balikpapan</span>
+<span class="text-label-sm font-label-sm text-outline tracking-wider">Islamic School Portal</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="w-full py-2.5 px-3 rounded-lg bg-primary-container text-white font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-150 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+<span>Input Mutaba'ah</span>
+</button>
+<!-- Main Navigation Tabs -->
+<nav class="flex flex-col gap-1">
+<!-- 1. Akademik & KBM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span>Akademik &amp; KBM</span>
+</a>
+<!-- 2. Kekhasan SDIT -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="auto_stories">auto_stories</span>
+<span>Kekhasan SDIT</span>
+</a>
+<!-- 3. Fasilitas Sekolah -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="domain">domain</span>
+<span>Fasilitas Sekolah</span>
+</a>
+<!-- 4. Kesiswaan & Eskul (ACTIVE INTENT TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-secondary-container dark:bg-primary-container text-primary dark:text-on-primary-container font-label-md text-label-md border-l-4 border-primary shadow-xs transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl text-primary" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<span class="font-bold">Kesiswaan &amp; Eskul</span>
+</a>
+<!-- 5. PPDB & Keuangan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="payments">payments</span>
+<span>PPDB &amp; Keuangan</span>
+</a>
+<!-- 6. Pengaturan Sistem -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span>Pengaturan Sistem</span>
+</a>
+</nav>
+</div>
+<!-- Footer SideNav -->
+<div class="flex flex-col gap-1 pt-4 border-t border-outline-variant dark:border-outline">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+<span>Bantuan &amp; Panduan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-error hover:bg-error-container transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</aside>
+<!-- Main Viewport Area -->
+<div class="ml-[260px] flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Anchor -->
+<header class="sticky top-0 z-30 flex items-center justify-between w-full h-16 px-6 bg-surface-container-lowest dark:bg-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<!-- Left: Brand / Quick Search -->
+<div class="flex items-center gap-6">
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 text-body-sm font-body-sm bg-[#F7FAF9] border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari santri, NISN, turnamen catur, atau eskul..." type="text"/>
+</div>
+</div>
+<!-- Right Nav Actions -->
+<div class="flex items-center gap-4">
+<!-- Hijri Calendar Info -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] text-[#287A74] text-label-md font-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+<span>14 Ramadhan 1445 H • 25 Maret 2024</span>
+</div>
+<!-- Action Icons -->
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-[#EFF7F5] rounded-lg transition-colors relative" title="Jadwal Acara">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-[#EFF7F5] rounded-lg transition-colors relative" title="Notifikasi">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-6 w-px bg-outline-variant"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-label-lg font-label-lg text-on-surface leading-tight font-bold">Ustadz Ahmad Fauzi, S.Pd.I</span>
+<span class="text-label-sm font-label-sm text-outline leading-tight">Admin Kurikulum / Guru Kelas 4 Ali bin Abi Thalib</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container overflow-hidden bg-secondary-fixed flex items-center justify-center text-primary font-bold shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A portrait of a respected Indonesian Islamic male teacher in light mint green formal batik with a black peci cap, smiling warmly in a bright scholastic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb7MmZnCC1PSNrAvitcXKgdY9SEefDOFW_2JWegxrLg2jCXtJtlqLN92WnK4-ZW8q33HSx79WCX3w4Cz9FA85uAZF5MxmVzbfR-VHIzf4NDBoBQdsijIhtl-bQroTmJJB17K0LYueNt2Ec0Wtqt4aqCUuWsDqHIcJ691XoSNUSeRQzb4_gY85uO-YedfH0x6GANnvOyOszZ5cu4vSNp1YqZPAyFr-PM7oq4XYs8NEdVvVUROKHrsZ_cA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content Container -->
+<main class="flex-1 p-6 lg:p-8 max-w-[1440px] w-full mx-auto flex flex-col gap-6">
+<!-- Breadcrumbs & Header Bar -->
+<div class="flex flex-col gap-2">
+<nav class="flex items-center gap-2 text-body-sm font-body-sm text-outline">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Kesiswaan &amp; Eskul</a>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Sistem Turnamen Catur &amp; Papan Prestasi</span>
+</nav>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-1">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Kesiswaan &amp; Manajemen Ekstrakurikuler</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-[#AEEED3] text-[#1A5C55] text-label-sm font-label-sm font-bold flex items-center gap-1 border border-[#94d3b9]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1A5C55]"></span>
+                Eskul Unggulan SDIT Balikpapan
+              </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Sistem Manajemen Turnamen Catur Cepat Ramadhan 1445 H &amp; Portofolio Rekap Prestasi Kejuaraan Santri</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2.5">
+<button class="p-2 border border-outline-variant bg-white text-on-surface-variant hover:text-primary hover:border-primary rounded-lg transition-colors shadow-xs" title="Cetak Rekap Hasil">
+<span class="material-symbols-outlined text-xl" data-icon="print">print</span>
+</button>
+<button class="p-2 border border-outline-variant bg-white text-on-surface-variant hover:text-primary hover:border-primary rounded-lg transition-colors shadow-xs" title="Ekspor PDF/Excel">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+</button>
+<button class="px-3.5 py-2 border border-[#CFE2DE] bg-[#EFF7F5] text-[#287A74] hover:bg-[#E0ECE9] font-label-md text-label-md rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="social_leaderboard">social_leaderboard</span>
+<span>+ Buat Pairing Babak Baru</span>
+</button>
+<button class="px-4 py-2 bg-primary-container hover:bg-[#216661] text-white font-label-md text-label-md rounded-lg flex items-center gap-2 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base" data-icon="military_tech">military_tech</span>
+<span>+ Tambah Prestasi Baru</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Module Sub-Navigation Bar -->
+<div class="flex items-center gap-2 border-b border-outline-variant overflow-x-auto pb-px">
+<a class="px-4 py-2.5 border-b-2 border-primary text-primary font-bold text-label-lg font-label-lg flex items-center gap-2 whitespace-nowrap bg-white rounded-t-lg" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="sports_esports">sports_esports</span>
+<span>Turnamen Catur SDIT (Swiss System)</span>
+</a>
+<a class="px-4 py-2.5 text-on-surface-variant hover:text-primary font-label-lg text-label-lg flex items-center gap-2 whitespace-nowrap hover:bg-white/60 rounded-t-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="groups">groups</span>
+<span>Daftar Eskul &amp; Anggota (Robotic, Archery, Tahfidz Club, Silat)</span>
+</a>
+<a class="px-4 py-2.5 text-on-surface-variant hover:text-primary font-label-lg text-label-lg flex items-center gap-2 whitespace-nowrap hover:bg-white/60 rounded-t-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="workspace_premium">workspace_premium</span>
+<span>Papan Galeri Prestasi &amp; Sertifikat</span>
+</a>
+<a class="px-4 py-2.5 text-on-surface-variant hover:text-primary font-label-lg text-label-lg flex items-center gap-2 whitespace-nowrap hover:bg-white/60 rounded-t-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="event_available">event_available</span>
+<span>Jadwal &amp; Absensi Eskul Pekanan</span>
+</a>
+</div>
+<!-- 1. Stat Summary Cards Grid (4 Columns) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl p-4.5 card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-[#5C7A76]">Total Santri Ber-Eskul</span>
+<span class="px-2 py-0.5 rounded-full bg-[#EFF7F5] text-primary text-label-sm font-label-sm font-semibold border border-[#CFE2DE]">Semester Genap</span>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-primary">342</span>
+<span class="text-body-md font-body-md text-outline">/ 380 Santri</span>
+</div>
+<div class="mt-2 flex items-center gap-1.5 text-label-sm font-label-sm text-[#1A5C55]">
+<span class="material-symbols-outlined text-base" data-icon="trending_up">trending_up</span>
+<span class="font-bold">90% Partisipasi Aktif</span>
+<span class="text-outline font-normal">• 12 Cabang Eskul</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl p-4.5 card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-[#5C7A76]">Turnamen Catur Berjalan</span>
+<span class="px-2 py-0.5 rounded-full bg-[#FFF8B0] text-[#695E05] text-label-sm font-label-sm font-bold border border-[#f1eba4]">Live Match</span>
+</div>
+<div class="mt-3 flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-primary">Ramadhan Cup 1445 H</span>
+<span class="text-body-sm font-body-sm text-outline">Babak 4 dari 5 Sesi Swiss System</span>
+</div>
+<div class="mt-2 flex items-center gap-1.5 text-label-sm font-label-sm text-primary">
+<span class="material-symbols-outlined text-base" data-icon="person_check">person_check</span>
+<span>32 Peserta Terdaftar (U-12 &amp; U-9)</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl p-4.5 card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-[#5C7A76]">Perolehan Medali &amp; Juara</span>
+<span class="px-2 py-0.5 rounded-full bg-[#AEEED3] text-[#1A5C55] text-label-sm font-label-sm font-bold">Th. 2023/2024</span>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-primary">18</span>
+<span class="text-body-md font-body-md text-outline">Penghargaan Resmi</span>
+</div>
+<div class="mt-2 flex items-center gap-2 text-label-sm font-label-sm font-semibold">
+<span class="text-amber-600 flex items-center gap-0.5"><span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span> 7 Emas</span>
+<span class="text-slate-500 flex items-center gap-0.5"><span class="w-2 h-2 rounded-full bg-slate-400 inline-block"></span> 6 Perak</span>
+<span class="text-amber-800 flex items-center gap-0.5"><span class="w-2 h-2 rounded-full bg-amber-800 inline-block"></span> 5 Perunggu</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl p-4.5 card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-label-md font-label-md text-[#5C7A76]">Jadwal Eskul Hari Ini</span>
+<span class="px-2 py-0.5 rounded-full bg-[#E0F2F0] text-[#287A74] text-label-sm font-label-sm font-bold">Senin Sore</span>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-primary">3 Klub</span>
+<span class="text-body-md font-body-md text-outline">Beroperasi Aktif</span>
+</div>
+<div class="mt-2 text-label-sm font-label-sm text-[#5C7A76] truncate">
+            Catur Cepat, Robotika SDIT, Panahan Sunnah
+          </div>
+</div>
+</div>
+<!-- Main Dual-Column Layout: Left (65%) & Right (35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: Tournament Management & Awards Gallery (8 Cols / approx 65%) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- SECTION A: Swiss System Pairing & Interactive Matches -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl card-shadow overflow-hidden">
+<!-- Header Section -->
+<div class="p-5 border-b border-[#E0ECE9] bg-gradient-to-r from-white to-[#EFF7F5]/50 flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-white flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xl" data-icon="military_tech">military_tech</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-primary leading-tight">Turnamen Catur SDIT 'Ramadhan Fast Chess Cup 2024'</h2>
+<p class="text-body-sm font-body-sm text-[#5C7A76]">Turnamen Catur Cepat 15 Menit Siswa SDIT Balikpapan Islamic School - Sistem Swiss 5 Babak</p>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-[#287A74] hover:bg-[#216661] text-white rounded-lg text-label-md font-label-md flex items-center gap-1.5 transition-colors shadow-xs">
+<span class="material-symbols-outlined text-sm" data-icon="auto_mode">auto_mode</span>
+<span>Generate Pairing Otomatis (Swiss Rule)</span>
+</button>
+</div>
+<!-- Filter Bar & Round Selectors -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#E0ECE9]">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-outline">Kategori:</span>
+<select class="py-1 px-2.5 bg-[#F7FAF9] border border-outline-variant rounded-md text-label-md font-label-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary">
+<option selected="">Kelas Atas (Kelas 4 - 6 Putra/Putri)</option>
+<option>Kelas Bawah (Kelas 1 - 3 Pemula)</option>
+<option>Semua Peserta (Open U-12)</option>
+</select>
+</div>
+<!-- Rounds Step Pills -->
+<div class="flex items-center gap-1.5 bg-[#F7FAF9] p-1 rounded-lg border border-[#E0ECE9]">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm text-outline hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="check_circle">check_circle</span>
+                    Babak 1
+                  </span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm text-outline hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="check_circle">check_circle</span>
+                    Babak 2
+                  </span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm text-outline hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="check_circle">check_circle</span>
+                    Babak 3
+                  </span>
+<span class="px-2.5 py-1 rounded bg-[#287A74] text-white font-bold text-label-sm font-label-sm shadow-xs flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#AEEED3] animate-pulse"></span>
+                    Babak 4 (Aktif)
+                  </span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm text-outline">
+                    Babak 5 (Final)
+                  </span>
+</div>
+</div>
+</div>
+<!-- Pairing Table for Babak 4 -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#EFF7F5] border-b border-[#CFE2DE] text-label-md font-label-md text-[#5C7A76] uppercase tracking-wider">
+<th class="py-3 px-4 w-16 text-center">Meja</th>
+<th class="py-3 px-4">Pemain Putih (White)</th>
+<th class="py-3 px-3 text-center">Status / Waktu</th>
+<th class="py-3 px-4">Pemain Hitam (Black)</th>
+<th class="py-3 px-4 text-center">Aksi Input Hasil</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E0ECE9] text-body-sm font-body-sm">
+<!-- Match 1 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4 text-center font-bold text-primary">
+<span class="w-7 h-7 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] inline-flex items-center justify-center">01</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-white border-2 border-slate-700 shadow-xs" title="Bidak Putih"></span>
+<div>
+<p class="font-bold text-on-surface">Muhammad Faris Al-Fatih</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Ali bin Abi Thalib • Skor Saat Ini: <span class="font-bold text-primary">3.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="px-2 py-0.5 rounded-full bg-[#FFF8B0] text-[#695E05] font-bold text-label-sm font-label-sm border border-[#f1eba4] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                          Bertanding
+                        </span>
+<span class="text-label-sm font-label-sm text-outline mt-1 font-mono">08:42 vs 09:15</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-700 shadow-xs" title="Bidak Hitam"></span>
+<div>
+<p class="font-bold text-on-surface">Zaid bin Tsabit Jr.</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Ali bin Abi Thalib • Skor Saat Ini: <span class="font-bold text-primary">3.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="inline-flex items-center gap-1 bg-[#F7FAF9] p-1 rounded-lg border border-[#E0ECE9]">
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-primary border border-transparent hover:border-[#CFE2DE] transition-all">1 - 0</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-outline border border-transparent hover:border-[#CFE2DE] transition-all">½ - ½</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-slate-800 border border-transparent hover:border-[#CFE2DE] transition-all">0 - 1</button>
+</div>
+</td>
+</tr>
+<!-- Match 2 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors bg-[#EFF7F5]/20">
+<td class="py-3.5 px-4 text-center font-bold text-primary">
+<span class="w-7 h-7 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] inline-flex items-center justify-center">02</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-white border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Raffasya Dwi Putra</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Ali • Skor: <span class="font-bold text-primary">2.5</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2.5 py-0.5 rounded-full bg-[#AEEED3] text-[#1A5C55] font-bold text-label-sm font-label-sm border border-[#94d3b9]">
+                        Selesai (1 - 0)
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface text-slate-600">Sultan Al-Ghifari</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 5 Umar bin Khattab • Skor: <span class="font-bold">2.5</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-label-sm font-label-sm text-[#1A5C55] font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+                        Terverifikasi
+                      </span>
+</td>
+</tr>
+<!-- Match 3 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4 text-center font-bold text-primary">
+<span class="w-7 h-7 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] inline-flex items-center justify-center">03</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-white border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Hamzah Abdullah</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 6 Utsman • Skor: <span class="font-bold text-primary">2.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="px-2 py-0.5 rounded-full bg-[#FFF8B0] text-[#695E05] font-bold text-label-sm font-label-sm border border-[#f1eba4]">
+                          Bertanding
+                        </span>
+<span class="text-label-sm font-label-sm text-outline mt-1 font-mono">04:12 vs 03:50</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Rayyan Arkhan</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Abu Bakar • Skor: <span class="font-bold text-primary">2.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="inline-flex items-center gap-1 bg-[#F7FAF9] p-1 rounded-lg border border-[#E0ECE9]">
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-primary border border-transparent hover:border-[#CFE2DE]">1 - 0</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-outline border border-transparent hover:border-[#CFE2DE]">½ - ½</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-slate-800 border border-transparent hover:border-[#CFE2DE]">0 - 1</button>
+</div>
+</td>
+</tr>
+<!-- Match 4 (Putri) -->
+<tr class="hover:bg-[#F7FAF9] transition-colors bg-[#EFF7F5]/20">
+<td class="py-3.5 px-4 text-center font-bold text-primary">
+<span class="w-7 h-7 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] inline-flex items-center justify-center">04</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-white border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Aisyah Nur Ramadhani <span class="text-xs text-primary font-normal">(Putri)</span></p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Ali • Skor: <span class="font-bold text-primary">2.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2.5 py-0.5 rounded-full bg-[#EFF7F5] text-[#287A74] font-bold text-label-sm font-label-sm border border-[#CFE2DE]">
+                        Remis (0.5 - 0.5)
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Maryam Khadijah <span class="text-xs text-primary font-normal">(Putri)</span></p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 4 Ali • Skor: <span class="font-bold text-primary">2.0</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-label-sm font-label-sm text-[#1A5C55] font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+                        Terverifikasi
+                      </span>
+</td>
+</tr>
+<!-- Match 5 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4 text-center font-bold text-primary">
+<span class="w-7 h-7 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] inline-flex items-center justify-center">05</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-white border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Bilal Al-Banjari</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 5 Umar • Skor: <span class="font-bold text-primary">1.5</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="px-2 py-0.5 rounded-full bg-[#FFF8B0] text-[#695E05] font-bold text-label-sm font-label-sm border border-[#f1eba4]">
+                          Bertanding
+                        </span>
+<span class="text-label-sm font-label-sm text-outline mt-1 font-mono">11:05 vs 10:20</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-slate-900 border-2 border-slate-700 shadow-xs"></span>
+<div>
+<p class="font-bold text-on-surface">Fatih Rabbani</p>
+<p class="text-label-sm font-label-sm text-outline">Kelas 3 Utsman • Skor: <span class="font-bold text-primary">1.5</span></p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="inline-flex items-center gap-1 bg-[#F7FAF9] p-1 rounded-lg border border-[#E0ECE9]">
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-primary border border-transparent hover:border-[#CFE2DE]">1 - 0</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-outline border border-transparent hover:border-[#CFE2DE]">½ - ½</button>
+<button class="px-2 py-1 rounded hover:bg-white text-label-sm font-label-sm font-bold text-slate-800 border border-transparent hover:border-[#CFE2DE]">0 - 1</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Mini Live Standings Leaderboard Strip -->
+<div class="p-4 bg-[#F7FAF9] border-t border-[#E0ECE9]">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-lg font-label-lg text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="leaderboard">leaderboard</span>
+                  Klasemen Sementara Babak 4 (Top 5 Standings)
+                </span>
+<a class="text-label-md font-label-md text-[#287A74] hover:underline flex items-center gap-0.5" href="#">
+                  Lihat Semua Peserta (32) <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-2">
+<!-- Rank 1 -->
+<div class="p-2.5 rounded-lg bg-white border border-[#CFE2DE] shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 font-bold text-label-sm font-label-sm flex items-center justify-center">1</span>
+<span class="text-label-sm font-label-sm font-mono font-bold text-primary">Pts: 3.0</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-surface truncate mt-1">M. Faris Al-Fatih</p>
+<p class="text-label-sm font-label-sm text-outline">Buchholz: 7.5</p>
+</div>
+<!-- Rank 2 -->
+<div class="p-2.5 rounded-lg bg-white border border-[#CFE2DE] shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-5 h-5 rounded-full bg-slate-200 text-slate-800 font-bold text-label-sm font-label-sm flex items-center justify-center">2</span>
+<span class="text-label-sm font-label-sm font-mono font-bold text-primary">Pts: 3.0</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-surface truncate mt-1">Zaid bin Tsabit Jr.</p>
+<p class="text-label-sm font-label-sm text-outline">Buchholz: 7.0</p>
+</div>
+<!-- Rank 3 -->
+<div class="p-2.5 rounded-lg bg-white border border-[#AEEED3] shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-5 h-5 rounded-full bg-amber-50 text-amber-900 font-bold text-label-sm font-label-sm flex items-center justify-center">3</span>
+<span class="text-label-sm font-label-sm font-mono font-bold text-[#1A5C55]">Pts: 3.5</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-surface truncate mt-1">Raffasya Dwi P.</p>
+<p class="text-label-sm font-label-sm text-outline">Buchholz: 6.5</p>
+</div>
+<!-- Rank 4 -->
+<div class="p-2.5 rounded-lg bg-white border border-[#E0ECE9] shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-5 h-5 rounded-full bg-[#EFF7F5] text-outline font-bold text-label-sm font-label-sm flex items-center justify-center">4</span>
+<span class="text-label-sm font-label-sm font-mono text-outline">Pts: 2.5</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-surface truncate mt-1">Sultan Al-Ghifari</p>
+<p class="text-label-sm font-label-sm text-outline">Buchholz: 6.0</p>
+</div>
+<!-- Rank 5 -->
+<div class="p-2.5 rounded-lg bg-white border border-[#E0ECE9] shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-5 h-5 rounded-full bg-[#EFF7F5] text-outline font-bold text-label-sm font-label-sm flex items-center justify-center">5</span>
+<span class="text-label-sm font-label-sm font-mono text-outline">Pts: 2.0</span>
+</div>
+<p class="text-label-md font-label-md font-bold text-on-surface truncate mt-1">Hamzah Abdullah</p>
+<p class="text-label-sm font-label-sm text-outline">Buchholz: 5.5</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: Student Awards & Contingent Gallery -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl card-shadow p-5 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[#287A74]" data-icon="trophy">trophy</span>
+                  Papan Galeri Prestasi Siswa &amp; Kontingen SDIT Balikpapan
+                </h3>
+<p class="text-body-sm font-body-sm text-[#5C7A76]">Dokumentasi raihan piala, medali, dan sertifikat resmi tingkat Kota Balikpapan &amp; Provinsi Kalimantan Timur</p>
+</div>
+<button class="text-label-md font-label-md text-primary font-bold hover:underline flex items-center gap-1">
+<span>Arsip Lengkap</span>
+<span class="material-symbols-outlined text-base" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<!-- Bento Card Grid for Recent Prestasi -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Item 1: O2SN Catur -->
+<div class="p-4 rounded-xl border border-[#CFE2DE] bg-gradient-to-br from-white to-[#EFF7F5] flex flex-col justify-between gap-3 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-amber-600" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                    O2SN Balikpapan
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">Maret 2024</span>
+</div>
+<div>
+<h4 class="font-bold text-title-md text-on-surface leading-snug">Juara 1 O2SN Catur SD Putra Tingkat Kota</h4>
+<p class="text-body-sm font-body-sm text-[#5C7A76] mt-1">Santri: <strong class="text-primary">Muhammad Faris Al-Fatih</strong> (Piala Emas &amp; Piagam Disdikbud Kota Balikpapan)</p>
+</div>
+<div class="pt-2 border-t border-[#CFE2DE] flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Pembimbing: Ustadz Ahmad Fauzi</span>
+<span class="text-[#287A74] font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs" data-icon="verified">verified</span> Lolos Provinsi</span>
+</div>
+</div>
+<!-- Item 2: Robotic -->
+<div class="p-4 rounded-xl border border-[#CFE2DE] bg-gradient-to-br from-white to-[#EFF7F5] flex flex-col justify-between gap-3 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-800 text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-slate-600" data-icon="smart_toy">smart_toy</span>
+                    Regional Kaltim
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">Februari 2024</span>
+</div>
+<div>
+<h4 class="font-bold text-title-md text-on-surface leading-snug">Juara 2 Lomba Robotika Line Follower</h4>
+<p class="text-body-sm font-body-sm text-[#5C7A76] mt-1">Santri: <strong class="text-primary">Tim Robotic SDIT</strong> (Raffasya Dwi Putra &amp; Maryam Khadijah)</p>
+</div>
+<div class="pt-2 border-t border-[#CFE2DE] flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Islamic Science Expo 2024</span>
+<span class="text-[#287A74] font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs" data-icon="military_tech">military_tech</span> Medali Perak</span>
+</div>
+</div>
+<!-- Item 3: MHQ 3 Juz FASI -->
+<div class="p-4 rounded-xl border border-[#CFE2DE] bg-gradient-to-br from-white to-[#EFF7F5] flex flex-col justify-between gap-3 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-[#AEEED3] text-[#1A5C55] text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#1A5C55]" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                    FASI Kaltim
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">Januari 2024</span>
+</div>
+<div>
+<h4 class="font-bold text-title-md text-on-surface leading-snug">Juara 1 MHQ 3 Juz Festival Anak Sholeh</h4>
+<p class="text-body-sm font-body-sm text-[#5C7A76] mt-1">Santri: <strong class="text-primary">Aisyah Nur Ramadhani</strong> (Festival Anak Sholeh Indonesia Tingkat Provinsi)</p>
+</div>
+<div class="pt-2 border-t border-[#CFE2DE] flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Tahfidz Club SDIT Balikpapan</span>
+<span class="text-[#287A74] font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs" data-icon="military_tech">military_tech</span> Delegasi Nasional</span>
+</div>
+</div>
+<!-- Item 4: Panahan Horsebow -->
+<div class="p-4 rounded-xl border border-[#CFE2DE] bg-gradient-to-br from-white to-[#EFF7F5] flex flex-col justify-between gap-3 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-[#FFF8B0] text-[#695E05] text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-amber-700" data-icon="adjust">adjust</span>
+                    Perpani Balikpapan
+                  </span>
+<span class="text-label-sm font-label-sm text-outline">Desember 2023</span>
+</div>
+<div>
+<h4 class="font-bold text-title-md text-on-surface leading-snug">Juara Harapan 1 Panahan Tradisional Sunnah</h4>
+<p class="text-body-sm font-body-sm text-[#5C7A76] mt-1">Santri: <strong class="text-primary">Zaid bin Tsabit Jr.</strong> (Horsebow U-12 Kejuaraan Daerah Panahan)</p>
+</div>
+<div class="pt-2 border-t border-[#CFE2DE] flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Pelatih: Coach Hendra</span>
+<span class="text-[#287A74] font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs" data-icon="verified">verified</span> Sertifikat Dispora</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Quick Input Form, Today's Schedule & Statistics (4 Cols / approx 35%) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- SECTION A: Quick Score Input & Adab Islami Form -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl card-shadow p-5 flex flex-col gap-4">
+<div class="flex items-center gap-2 border-b border-[#E0ECE9] pb-3">
+<span class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg" data-icon="sports_score">sports_score</span>
+</span>
+<div>
+<h3 class="text-title-md font-title-md text-primary font-bold">Input Skor &amp; Evaluasi Adab</h3>
+<p class="text-label-sm font-label-sm text-outline">Pencatatan Cepat Hasil Partai Turnamen</p>
+</div>
+</div>
+<form class="flex flex-col gap-3.5">
+<!-- Select Table -->
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface font-semibold">Pilih Meja / Partai:</label>
+<select class="w-full px-3 py-2 bg-white border border-[#E0ECE9] rounded-lg text-body-sm font-body-sm focus:border-primary focus:ring-2 focus:ring-primary/20">
+<option selected="">Meja 1: Faris Al-Fatih (P) vs Zaid (H)</option>
+<option>Meja 3: Hamzah (P) vs Rayyan Arkhan (H)</option>
+<option>Meja 5: Bilal (P) vs Fatih Rabbani (H)</option>
+</select>
+</div>
+<!-- Match Result Radio -->
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface font-semibold">Hasil Pertandingan:</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#CFE2DE] hover:bg-[#EFF7F5] cursor-pointer text-center">
+<input class="text-primary focus:ring-primary mb-1" name="match_result" type="radio" value="1-0"/>
+<span class="text-label-sm font-label-sm font-bold text-primary">Putih (1 - 0)</span>
+</label>
+<label class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#CFE2DE] hover:bg-[#EFF7F5] cursor-pointer text-center">
+<input class="text-primary focus:ring-primary mb-1" name="match_result" type="radio" value="draw"/>
+<span class="text-label-sm font-label-sm font-bold text-outline">Remis (½ - ½)</span>
+</label>
+<label class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#CFE2DE] hover:bg-[#EFF7F5] cursor-pointer text-center">
+<input class="text-primary focus:ring-primary mb-1" name="match_result" type="radio" value="0-1"/>
+<span class="text-label-sm font-label-sm font-bold text-slate-800">Hitam (0 - 1)</span>
+</label>
+</div>
+</div>
+<!-- Islamic Adab / Fairplay Checklist (Khas SDIT) -->
+<div class="p-3 rounded-lg bg-[#EFF7F5] border border-[#CFE2DE] flex flex-col gap-2">
+<span class="text-label-md font-label-md text-[#287A74] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="handshake">handshake</span>
+                  Checklist Adab &amp; Fairplay Santri:
+                </span>
+<label class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span>Membaca Doa &amp; Bismillah sebelum tanding</span>
+</label>
+<label class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span>Jabat tangan &amp; senyum ukhuwah sebelum/sesudah</span>
+</label>
+<label class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span>Merapikan bidak &amp; papan catur kembali ke tempat</span>
+</label>
+</div>
+<!-- Catatan Wasit -->
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-on-surface font-semibold">Catatan Wasit / Pembina:</label>
+<textarea class="w-full px-3 py-2 bg-white border border-[#E0ECE9] rounded-lg text-body-sm font-body-sm focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Catatan langkah, waktu, atau evaluasi sportivitas..." rows="2"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-2.5 bg-primary hover:bg-[#004e49] text-white font-label-md text-label-md font-bold rounded-lg transition-colors flex items-center justify-center gap-2 shadow-xs" type="button">
+<span class="material-symbols-outlined text-base" data-icon="save">save</span>
+<span>Simpan Skor &amp; Perbarui Standings</span>
+</button>
+</form>
+</div>
+<!-- SECTION B: Today's Ekstrakurikuler Schedule & Attendance -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl card-shadow p-5 flex flex-col gap-3.5">
+<div class="flex items-center justify-between border-b border-[#E0ECE9] pb-3">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+</span>
+<div>
+<h3 class="text-title-md font-title-md text-primary font-bold">Jadwal &amp; Absensi Hari Ini</h3>
+<p class="text-label-sm font-label-sm text-outline">Sesi Latihan Sore • Senin, 25 Maret 2024</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-[#AEEED3] text-[#1A5C55] font-bold text-label-sm font-label-sm">Live</span>
+</div>
+<!-- Schedule Items -->
+<div class="flex flex-col gap-3">
+<!-- Item 1: Chess -->
+<div class="p-3 rounded-lg border border-[#CFE2DE] bg-[#F7FAF9] flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-bold text-label-md font-label-md text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="sports_esports">sports_esports</span>
+                    Eskul Catur SDIT Balikpapan
+                  </span>
+<span class="text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2 py-0.5 rounded">24/24 Hadir</span>
+</div>
+<p class="text-label-sm font-label-sm text-outline">15.45 - 17.00 WITA • Aula Utama Lantai 2</p>
+<div class="flex items-center justify-between pt-1 border-t border-[#E0ECE9] text-label-sm font-label-sm text-[#5C7A76]">
+<span>Instruktur: Master Percasi &amp; Ustadz Ahmad</span>
+<span class="text-primary font-semibold">Sesi Tanding Babak 4</span>
+</div>
+</div>
+<!-- Item 2: Panahan Sunnah -->
+<div class="p-3 rounded-lg border border-[#E0ECE9] bg-white flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-bold text-label-md font-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-[#287A74]" data-icon="adjust">adjust</span>
+                    Eskul Panahan Sunnah (Archery)
+                  </span>
+<span class="text-label-sm font-label-sm font-bold text-outline bg-[#F7FAF9] px-2 py-0.5 rounded">18 Santri</span>
+</div>
+<p class="text-label-sm font-label-sm text-outline">16.00 - 17.15 WITA • Lapangan Hijau Terbuka</p>
+<div class="flex items-center justify-between pt-1 border-t border-[#E0ECE9] text-label-sm font-label-sm text-[#5C7A76]">
+<span>Pelatih: Coach Hendra (Perpani)</span>
+<span class="text-amber-700 font-semibold">Latihan Jarak 15m</span>
+</div>
+</div>
+<!-- Item 3: Robotic & Coding -->
+<div class="p-3 rounded-lg border border-[#E0ECE9] bg-white flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-bold text-label-md font-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-[#287A74]" data-icon="smart_toy">smart_toy</span>
+                    Eskul Robotic &amp; Coding SDIT
+                  </span>
+<span class="text-label-sm font-label-sm font-bold text-outline bg-[#F7FAF9] px-2 py-0.5 rounded">16 Santri</span>
+</div>
+<p class="text-label-sm font-label-sm text-outline">16.00 - 17.15 WITA • Lab Komputer 1</p>
+<div class="flex items-center justify-between pt-1 border-t border-[#E0ECE9] text-label-sm font-label-sm text-[#5C7A76]">
+<span>Instruktur: Ustadz Salman</span>
+<span class="text-primary font-semibold">Pemrograman Sensor</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION C: Student Extracurricular Interest Distribution -->
+<div class="bg-white border border-[#E0ECE9] rounded-xl card-shadow p-5 flex flex-col gap-3.5">
+<div class="flex items-center justify-between border-b border-[#E0ECE9] pb-3">
+<div>
+<h3 class="text-title-md font-title-md text-primary font-bold">Distribusi Peminatan Eskul</h3>
+<p class="text-label-sm font-label-sm text-outline">Total 342 Santri Terdaftar di Semester Ini</p>
+</div>
+<span class="material-symbols-outlined text-[#287A74]" data-icon="pie_chart">pie_chart</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Category 1: Olahraga Sunnah -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="font-bold text-on-surface">Olahraga Sunnah (Catur, Panahan, Futsal)</span>
+<span class="font-bold text-primary">135 Santri (39%)</span>
+</div>
+<div class="w-full bg-[#E0ECE9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#287A74] h-full rounded-full" style="width: 39%"></div>
+</div>
+</div>
+<!-- Category 2: Keagamaan -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="font-bold text-on-surface">Keagamaan (Tahfidz Club &amp; Kaligrafi)</span>
+<span class="font-bold text-primary">110 Santri (32%)</span>
+</div>
+<div class="w-full bg-[#E0ECE9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#55A9A0] h-full rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<!-- Category 3: Sains & Teknologi -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="font-bold text-on-surface">Sains &amp; Teknologi (Robotic, Coding, Saintis)</span>
+<span class="font-bold text-primary">65 Santri (19%)</span>
+</div>
+<div class="w-full bg-[#E0ECE9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#82d5cb] h-full rounded-full" style="width: 19%"></div>
+</div>
+</div>
+<!-- Category 4: Seni & Bahasa -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="font-bold text-on-surface">Seni &amp; Bahasa (Pidato 3 Bahasa, Nasyid)</span>
+<span class="font-bold text-primary">32 Santri (10%)</span>
+</div>
+<div class="w-full bg-[#E0ECE9] h-2 rounded-full overflow-hidden">
+<div class="bg-[#AEEED3] h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+<!-- Motivational Callout Quote -->
+<div class="p-3 bg-[#EFF7F5] rounded-lg border border-[#CFE2DE] text-body-sm font-body-sm text-[#287A74] flex items-start gap-2 mt-1">
+<span class="material-symbols-outlined text-lg shrink-0 mt-0.5" data-icon="format_quote">format_quote</span>
+<p class="italic text-label-sm font-label-sm leading-relaxed">
+                "Mukmin yang kuat lebih dicintai Allah daripada mukmin yang lemah." Menumbuhkan jiwa kompetitif yang beradab dan berakhlak mulia.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Standardized Institutional Portal Footer -->
+<footer class="mt-auto w-full py-4 px-8 border-t border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-surface text-center flex flex-wrap items-center justify-between gap-4 text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>© 2024 SDIT Balikpapan Islamic School • Modul Kesiswaan &amp; Prestasi</span>
+</div>
+<div class="flex items-center gap-4">
+<span>Server: Terhubung RLS Supabase (Balikpapan DC)</span>
+<span>•</span>
+<span>Balikpapan, Kalimantan Timur</span>
+</div>
+</footer>
+</div>
+</body></html>

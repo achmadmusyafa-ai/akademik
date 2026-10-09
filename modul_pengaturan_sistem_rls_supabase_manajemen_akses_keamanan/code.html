@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modul Pengaturan Sistem, Manajemen Pengguna &amp; Keamanan RLS Supabase - SDIT Balikpapan</title>
+<!-- Material Symbols & Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching Serene Islamic Academy Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#0b513d",
+            "inverse-primary": "#87d4cd",
+            "secondary-fixed-dim": "#82d5cb",
+            "secondary-fixed": "#9ef2e7",
+            "inverse-surface": "#353200",
+            "on-tertiary-container": "#c0ffe4",
+            "on-tertiary-fixed": "#002116",
+            "on-tertiary": "#ffffff",
+            "primary": "#00615b",
+            "inverse-on-surface": "#faf3ac",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface": "#fffae0",
+            "surface-bright": "#fffae0",
+            "on-surface-variant": "#3f4947",
+            "secondary-container": "#9ef2e7",
+            "primary-fixed-dim": "#87d4cd",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#b0f0d5",
+            "surface-container-high": "#f1eba4",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#00504a",
+            "tertiary-fixed-dim": "#94d3b9",
+            "on-secondary-container": "#097169",
+            "surface-dim": "#e3dc97",
+            "on-secondary-fixed": "#00201d",
+            "tertiary": "#20604b",
+            "primary-fixed": "#a3f1e9",
+            "on-primary-container": "#bbfff8",
+            "background": "#fffae0",
+            "error-container": "#ffdad6",
+            "secondary": "#006a63",
+            "on-primary-fixed-variant": "#00504b",
+            "on-surface": "#1e1c00",
+            "surface-container-highest": "#ece59f",
+            "outline-variant": "#bec9c7",
+            "error": "#ba1a1a",
+            "tertiary-container": "#3c7963",
+            "on-primary-fixed": "#00201e",
+            "primary-container": "#287a74",
+            "surface-variant": "#ece59f",
+            "surface-tint": "#0e6a64",
+            "surface-container": "#f7f0a9",
+            "surface-container-low": "#fdf6ae",
+            "outline": "#6f7977",
+            "on-background": "#1e1c00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.25rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Styling helper for code syntaxes */
+    .sql-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #bec9c7;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6f7977;
+    }
+  </style>
+</head>
+<body class="bg-[#F7FAF9] text-on-surface antialiased font-body-md text-body-md min-h-screen">
+<!-- ========================================================================= -->
+<!-- 1. FIXED SIDE NAVIGATION BAR (As defined in Shared Components JSON)        -->
+<!-- ========================================================================= -->
+<aside class="fixed left-0 top-0 h-full w-[260px] flex flex-col justify-between p-4 z-40 bg-surface-container-lowest border-r border-outline-variant">
+<div class="flex flex-col gap-4">
+<!-- Logo & Institution Brand Header -->
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md font-bold text-primary">SDIT Balikpapan</span>
+<span class="text-label-sm font-label-sm text-outline">Islamic School Portal</span>
+</div>
+</div>
+<!-- Quick Action CTA Button: Input Mutaba'ah -->
+<div class="pt-1 pb-2">
+<button class="w-full h-10 bg-primary-container text-on-primary hover:bg-[#216661] transition-all rounded-lg flex items-center justify-center gap-2 px-3 text-label-lg font-label-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Input Mutaba'ah</span>
+</button>
+</div>
+<!-- Main Navigation Menu Items -->
+<nav class="flex flex-col gap-1">
+<!-- 1. Akademik & KBM (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#akademik">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Akademik &amp; KBM</span>
+</a>
+<!-- 2. Kekhasan SDIT (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#kekhasan">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+<span>Kekhasan SDIT</span>
+</a>
+<!-- 3. Fasilitas Sekolah (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#fasilitas">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span>Fasilitas Sekolah</span>
+</a>
+<!-- 4. Kesiswaan & Eskul (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#kesiswaan">
+<span class="material-symbols-outlined text-[20px]">emoji_events</span>
+<span>Kesiswaan &amp; Eskul</span>
+</a>
+<!-- 5. PPDB & Keuangan (Inactive with Notification Badge) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#ppdb">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span>PPDB &amp; Keuangan</span>
+</div>
+<span class="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-secondary-container text-on-secondary-container">12</span>
+</a>
+<!-- 6. Pengaturan Sistem (ACTIVE STATE - Destination Lock) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-secondary-container text-primary font-label-md text-label-md border-l-4 border-primary transition-colors duration-150 ease-in-out shadow-xs" href="#pengaturan">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-bold">Pengaturan Sistem</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Footer Links -->
+<div class="border-t border-outline-variant pt-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors" href="#bantuan">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span>Bantuan &amp; Panduan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-error font-label-md text-label-md hover:bg-error-container hover:text-on-error-container transition-colors" href="#keluar">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. MAIN LAYOUT WRAPPER (Offset for 260px SideNav)                         -->
+<!-- ========================================================================= -->
+<div class="pl-[260px] flex flex-col min-h-screen">
+<!-- TOP NAVBAR (Sticky) -->
+<header class="sticky top-0 z-30 flex items-center justify-between w-full h-16 px-8 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<!-- Search Bar -->
+<div class="flex items-center gap-3 w-1/3 min-w-[340px]">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg text-body-sm font-body-sm bg-[#F7FAF9] border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="Cari pengaturan, role, tabel RLS, atau pengguna..." type="text"/>
+</div>
+</div>
+<!-- Right Nav Cluster: Date, Notifications, Calendar & Active User Profile -->
+<div class="flex items-center gap-5">
+<!-- Hijriyah & Masehi Date Badge -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EFF7F5] border border-[#CFE2DE] text-[#287A74] text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>14 Ramadhan 1445 H • 25 Maret 2024</span>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center gap-1 border-x border-outline-variant/60 px-3">
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Notifikasi Keamanan">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Jadwal &amp; Agenda Sekolah">
+<span class="material-symbols-outlined text-[20px]">event_note</span>
+</button>
+</div>
+<!-- Active User Profile Dropdown -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-lg shadow-sm border border-secondary-fixed">
+            AF
+          </div>
+<div class="flex flex-col text-left">
+<span class="text-label-md font-label-md font-bold text-on-surface">Ustadz Ahmad Fauzi, S.Pd.I</span>
+<span class="text-label-sm font-label-sm text-[#287A74] font-medium">Super Admin Sistem &amp; IT Yayasan</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 3. PAGE BODY CONTENT CANVAS (Max 1440px Centered Flow)                    -->
+<!-- ========================================================================= -->
+<main class="flex-1 p-8 max-w-[1440px] w-full mx-auto space-y-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-label-md font-label-md text-outline">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Pengaturan Sistem</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Manajemen Akses &amp; Keamanan Database RLS Supabase</span>
+</nav>
+<!-- Page Header & Action Cluster -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2 border-b border-outline-variant/60">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="text-headline-md font-headline-md text-on-surface">
+              Pengaturan Sistem &amp; Hak Akses Berbasis RLS (Row Level Security)
+            </h1>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#AEEED3] text-[#1A5C55] font-bold border border-[#55A9A0]/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+              PostgreSQL Protected
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-outline max-w-4xl">
+            Konfigurasi multi-role user (Admin, Guru Kelas, Guru Tahfidz, Bendahara, Wali Santri), sinkronisasi Supabase Auth, dan audit audit trail policy database PostgreSQL.
+          </p>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center flex-wrap gap-2.5">
+<button class="h-10 px-3.5 rounded-lg bg-[#EFF7F5] text-[#287A74] border border-[#CFE2DE] hover:bg-[#E0ECE9] text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">description</span>
+            Dokumentasi RLS
+          </button>
+<button class="h-10 px-3.5 rounded-lg bg-[#EFF7F5] text-[#287A74] border border-[#CFE2DE] hover:bg-[#E0ECE9] text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+            Cadangkan Database
+          </button>
+<button class="h-10 px-3.5 rounded-lg bg-[#EFF7F5] text-[#287A74] border border-[#CFE2DE] hover:bg-[#E0ECE9] text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+            Uji Coba Policy RLS
+          </button>
+<button class="h-10 px-4 rounded-lg bg-primary-container text-on-primary hover:bg-[#216661] text-label-md font-label-md transition-colors flex items-center gap-2 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+            + Tambah Pengguna Baru
+          </button>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 4. TOP STAT / KPI CARDS (4 Cards Grid)                                    -->
+<!-- ========================================================================= -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1: Total Pengguna -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="text-label-md font-label-md text-outline">Total Pengguna Terdaftar</span>
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-on-surface">184 Akun Aktif</div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">38 Guru &amp; Asatidz • 142 Wali Murid • 4 Admin</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E0ECE9]/80 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1A5C55] bg-[#AEEED3] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              Supabase Auth Sinkron
+            </span>
+<span class="text-label-sm font-label-sm text-outline">v2.39 Sync</span>
+</div>
+</div>
+<!-- KPI 2: Kebijakan RLS -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="text-label-md font-label-md text-outline">Kebijakan RLS (Row Level Security)</span>
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-on-surface">26 Policies Aktif</div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Terpasang pada 8 Tabel Inti Sekolah</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E0ECE9]/80 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1A5C55] bg-[#AEEED3] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              100% RLS Enabled (Enforced)
+            </span>
+<span class="text-label-sm font-label-sm text-outline">mutabaah, rapor...</span>
+</div>
+</div>
+<!-- KPI 3: Koneksi Supabase & API -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="text-label-md font-label-md text-outline">Koneksi Supabase &amp; API</span>
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+              Status Terhubung
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Latency: 14ms (Balikpapan DC) • TLS 1.3</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E0ECE9]/80 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#287A74] bg-[#E0F2F0] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">key</span>
+              Kunci Anon &amp; Service Role Aman
+            </span>
+<span class="text-label-sm font-label-sm text-outline">Postgres 15.2</span>
+</div>
+</div>
+<!-- KPI 4: Audit Log -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<span class="text-label-md font-label-md text-outline">Audit Log &amp; Percobaan Akses</span>
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-on-surface">0 Insiden Pelanggaran</div>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">7,420 Permintaan API 24 jam terakhir</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E0ECE9]/80 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#1A5C55] bg-[#AEEED3] px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+              Audited &amp; Compliant
+            </span>
+<span class="text-label-sm font-label-sm text-outline">Zero leak</span>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. SECONDARY NAVIGATION / TABS                                            -->
+<!-- ========================================================================= -->
+<div class="flex items-center gap-2 border-b border-outline-variant/60 overflow-x-auto">
+<button class="px-4 py-3 border-b-2 border-primary text-primary font-bold text-label-md font-label-md flex items-center gap-2 transition-colors whitespace-nowrap bg-surface-container-lowest rounded-t-lg">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+          Manajemen Pengguna &amp; Hak Akses (RBAC)
+        </button>
+<button class="px-4 py-3 text-outline hover:text-primary font-label-md text-label-md flex items-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">database</span>
+          Tabel &amp; Kebijakan RLS PostgreSQL
+        </button>
+<button class="px-4 py-3 text-outline hover:text-primary font-label-md text-label-md flex items-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+          Konfigurasi Autentikasi &amp; WhatsApp Gateway
+        </button>
+<button class="px-4 py-3 text-outline hover:text-primary font-label-md text-label-md flex items-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+          Audit Log &amp; Sesi Aktif
+        </button>
+</div>
+<!-- ========================================================================= -->
+<!-- 6. MAIN CONTENT GRID (2 COLUMNS: LEFT 65%, RIGHT 35%)                    -->
+<!-- ========================================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- ===================================================================== -->
+<!-- LEFT COLUMN (65% -> 8 of 12 columns)                                  -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-8 space-y-6">
+<!-- SECTION 1: DAFTAR PENGGUNA SISTEM & KONFIGURASI ROLE -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] overflow-hidden">
+<!-- Table Header Bar -->
+<div class="p-5 border-b border-[#E0ECE9] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-title-md font-title-md text-on-surface">Daftar Pengguna Sistem &amp; Konfigurasi Role</h2>
+<p class="text-body-sm font-body-sm text-outline">Kelola akun terotentikasi, sinkronisasi Supabase Auth ID, dan batasan hak operasional.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-lg text-outline hover:text-primary hover:bg-[#EFF7F5] transition-colors" title="Export CSV Data Pengguna">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-lg text-outline hover:text-primary hover:bg-[#EFF7F5] transition-colors" title="Sinkron Ulang dengan Supabase">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="p-4 bg-[#EFF7F5]/50 border-b border-[#E0ECE9] flex flex-wrap items-center justify-between gap-3">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg text-body-sm font-body-sm bg-surface-container-lowest border border-[#CFE2DE] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none" placeholder="Cari nama, email, atau NISN..." type="text"/>
+</div>
+<div class="flex items-center flex-wrap gap-2">
+<!-- Filter Role -->
+<select class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm bg-surface-container-lowest border border-[#CFE2DE] text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none">
+<option>Semua Role Pengguna</option>
+<option>Admin Yayasan</option>
+<option>Guru Kelas 4 Ali</option>
+<option>Asatidz Tahfidz</option>
+<option>Bendahara Sekolah</option>
+<option>Wali Santri</option>
+</select>
+<!-- Filter Status -->
+<select class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm bg-surface-container-lowest border border-[#CFE2DE] text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none">
+<option>Semua Status</option>
+<option>Aktif</option>
+<option>Perlu Aktivasi</option>
+</select>
+</div>
+</div>
+<!-- Table of Users -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#EFF7F5] border-b border-[#E0ECE9] text-outline text-label-md font-label-md uppercase tracking-wider">
+<th class="py-3 px-4">Pengguna &amp; Email</th>
+<th class="py-3 px-4">Role Akses</th>
+<th class="py-3 px-4">Scope Izin Database (RLS)</th>
+<th class="py-3 px-4 text-center">Status</th>
+<th class="py-3 px-4 text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E0ECE9] text-body-sm font-body-sm">
+<!-- User 1 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                          AF
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ustadz Ahmad Fauzi, S.Pd.I</span>
+<span class="text-outline text-label-sm font-label-sm font-mono">ahmad.fauzi@sdit-balikpapan.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold bg-[#E0F2F0] text-[#287A74] px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+                        Super Admin &amp; Guru Kelas 4 Ali
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium">Full R/W Semua Modul</div>
+<span class="text-label-sm font-label-sm text-[#287A74] font-mono">Bypass RLS Enforced</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                        Aktif (2FA On)
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 text-outline hover:text-primary hover:bg-[#EFF7F5] rounded transition-colors" title="Edit Role">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error hover:bg-error-container rounded transition-colors" title="Reset Kata Sandi">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User 2 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#55A9A0] text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                          NH
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ustadzah Nurul Hidayah, S.Pd</span>
+<span class="text-outline text-label-sm font-label-sm font-mono">nurul.h@sdit-balikpapan.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold bg-[#EFF7F5] text-[#287A74] px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                        Guru Mapel &amp; Pengelola Sarpras
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium">R/W Fasilitas &amp; Nilai KBM</div>
+<span class="text-label-sm font-label-sm text-outline">Scoped to class 4 &amp; 5</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Aktif
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 text-outline hover:text-primary hover:bg-[#EFF7F5] rounded transition-colors" title="Edit Role">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- User 3 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#20604b] text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                          SA
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ustadz Salman Al-Farisi</span>
+<span class="text-outline text-label-sm font-label-sm font-mono">salman.tahfidz@sdit-balikpapan.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold bg-[#E0F2F0] text-[#287A74] px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+                        Musyrif / Guru Tahfidz
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium">R/W Mutabaah Halaqah Santri</div>
+<span class="text-label-sm font-label-sm text-[#287A74] font-mono">RLS: guru_id = auth.uid()</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Aktif
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 text-outline hover:text-primary hover:bg-[#EFF7F5] rounded transition-colors" title="Edit Role">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- User 4 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#006a63] text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                          SM
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ustadzah Siti Maryam, S.E</span>
+<span class="text-outline text-label-sm font-label-sm font-mono">maryam.keuangan@sdit-balikpapan.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold bg-[#FFF8B0] text-[#695E05] px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+                        Bendahara Sekolah
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium">R/W Keuangan SPP &amp; Verifikasi PPDB</div>
+<span class="text-label-sm font-label-sm text-outline">Scoped: Finance tables only</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Aktif
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 text-outline hover:text-primary hover:bg-[#EFF7F5] rounded transition-colors" title="Edit Role">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- User 5 -->
+<tr class="hover:bg-[#F7FAF9] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#CFE2DE] text-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                          HG
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Hendra Gunawan (Wali Santri M. Faris)</span>
+<span class="text-outline text-label-sm font-label-sm font-mono">hendra.g@gmail.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold bg-[#EFF7F5] text-on-surface-variant px-2.5 py-1 rounded-md border border-[#CFE2DE]">
+<span class="material-symbols-outlined text-[14px]">family_restroom</span>
+                        Wali Murid (M. Faris Al-Fatih)
+                      </span>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium">R/O Profil Anak, Mutabaah &amp; Bukti SPP</div>
+<span class="text-label-sm font-label-sm text-[#287A74] font-mono">RLS: santri_id = child(auth.uid())</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-bold text-[#1A5C55] bg-[#AEEED3] px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Aktif
+                      </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 text-label-sm font-label-sm font-bold text-primary bg-[#EFF7F5] border border-[#CFE2DE] rounded-md hover:bg-[#E0ECE9] transition-colors">
+                        Kelola Santri
+                      </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="p-4 border-t border-[#E0ECE9] flex items-center justify-between text-label-md font-label-md text-outline">
+<div>Menampilkan 1 - 5 dari 184 pengguna terdaftar</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 border border-outline-variant rounded hover:bg-[#EFF7F5] transition-colors disabled:opacity-40" disabled="">Sebelumnya</button>
+<button class="px-3 py-1 bg-primary text-on-primary rounded font-bold">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-[#EFF7F5] transition-colors">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-[#EFF7F5] transition-colors">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-[#EFF7F5] transition-colors">37</button>
+<button class="px-2.5 py-1 border border-outline-variant rounded hover:bg-[#EFF7F5] transition-colors">Selanjutnya</button>
+</div>
+</div>
+</div>
+<!-- SECTION 2: EDITOR VISUAL KEBIJAKAN RLS SUPABASE -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] p-6 space-y-5">
+<!-- Table Selector & Security Indicator Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E0ECE9]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#E0F2F0] text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">table_chart</span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">Editor Visual Kebijakan RLS Supabase (Row Level Security)</h3>
+<p class="text-body-sm font-body-sm text-outline">Pemeriksaan aturan isolasi data Postgres per tabel dan otorisasi auth JWT.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#AEEED3]/40 border border-[#55A9A0]/40 text-[#1A5C55] text-label-md font-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                  RLS ACTIVE: Enforced
+                </div>
+<select class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm bg-[#F7FAF9] border border-[#CFE2DE] text-primary font-bold focus:outline-none focus:border-primary">
+<option selected="">Tabel: public.mutabaah_tahfidz</option>
+<option>Tabel: public.rapor_akademik</option>
+<option>Tabel: public.pembayaran_spp</option>
+<option>Tabel: public.data_santri</option>
+</select>
+</div>
+</div>
+<!-- SQL Rule Preview Box with Syntax Highlighting Look -->
+<div class="rounded-xl bg-[#163330] p-4 text-[#AEEED3] font-mono text-body-sm space-y-2 border border-[#287A74] shadow-inner">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-[#55A9A0] pb-2 border-b border-[#287A74]/50">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                  PostgreSQL Policy Definition (Compiled SQL)
+                </span>
+<span class="text-xs bg-[#20604b] text-[#bbfff8] px-2 py-0.5 rounded">Security Invoker</span>
+</div>
+<div class="pt-1 leading-relaxed">
+<p><span class="text-pink-400 font-bold">CREATE POLICY</span> <span class="text-yellow-200">"Guru Tahfidz hanya input halaqah sendiri"</span></p>
+<p class="pl-4"><span class="text-teal-300 font-bold">ON</span> <span class="text-white">public.mutabaah_tahfidz</span> <span class="text-teal-300 font-bold">FOR ALL</span></p>
+<p class="pl-4"><span class="text-teal-300 font-bold">USING</span> (auth.uid() = guru_id <span class="text-pink-400 font-bold">OR</span> auth.role() = <span class="text-yellow-200">'admin'</span>);</p>
+<div class="my-2 border-t border-[#287A74]/30"></div>
+<p><span class="text-pink-400 font-bold">CREATE POLICY</span> <span class="text-yellow-200">"Wali murid hanya melihat setoran anaknya"</span></p>
+<p class="pl-4"><span class="text-teal-300 font-bold">ON</span> <span class="text-white">public.mutabaah_tahfidz</span> <span class="text-teal-300 font-bold">FOR SELECT</span></p>
+<p class="pl-4"><span class="text-teal-300 font-bold">USING</span> (santri_id <span class="text-pink-400 font-bold">IN</span> (<span class="text-pink-400 font-bold">SELECT</span> id <span class="text-pink-400 font-bold">FROM</span> public.santri <span class="text-teal-300 font-bold">WHERE</span> wali_id = auth.uid()));</p>
+</div>
+</div>
+<!-- Interactive Policy Toggle List -->
+<div class="space-y-3 pt-1">
+<div class="text-label-md font-label-md text-on-surface font-bold uppercase tracking-wider">
+                Daftar Kebijakan Aktif Pada Tabel Ini
+              </div>
+<!-- Policy Item 1 -->
+<div class="p-3.5 rounded-lg border border-[#E0ECE9] bg-[#F7FAF9] flex items-center justify-between hover:border-[#CFE2DE] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-body-sm font-mono">policy_wali_view_own_child_mutabaah</div>
+<p class="text-label-sm font-label-sm text-outline">Scope: Hanya baris santri yang tertaut pada ID wali di tabel referensi santri.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-[#AEEED3] text-[#1A5C55]">
+                    Aktif (SELECT only)
+                  </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Policy Item 2 -->
+<div class="p-3.5 rounded-lg border border-[#E0ECE9] bg-[#F7FAF9] flex items-center justify-between hover:border-[#CFE2DE] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-body-sm font-mono">policy_guru_update_assigned_rombel</div>
+<p class="text-label-sm font-label-sm text-outline">Scope: Guru Tahfidz menginput mutaba'ah hanya pada santri kelompok halaqahnya.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-[#AEEED3] text-[#1A5C55]">
+                    Aktif (INSERT / UPDATE)
+                  </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Policy Item 3 -->
+<div class="p-3.5 rounded-lg border border-[#E0ECE9] bg-[#F7FAF9] flex items-center justify-between hover:border-[#CFE2DE] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-body-sm font-mono">policy_bendahara_read_write_spp_transfers</div>
+<p class="text-label-sm font-label-sm text-outline">Scope: Bendahara memiliki izin penuh untuk rekap verifikasi pembayaran SPP.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-[#AEEED3] text-[#1A5C55]">
+                    Aktif (ALL actions)
+                  </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Policy Item 4 -->
+<div class="p-3.5 rounded-lg border border-[#E0ECE9] bg-[#F7FAF9] flex items-center justify-between hover:border-[#CFE2DE] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-body-sm font-mono">policy_public_access_disabled</div>
+<p class="text-label-sm font-label-sm text-outline">Scope: Anon public key tidak diizinkan membaca atau menulis data santri.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-error-container text-error">
+                    Ditolak (Anon Blocked)
+                  </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- RIGHT COLUMN (35% -> 4 of 12 columns)                                 -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-4 space-y-6">
+<!-- PANEL 1: PANEL SIMULASI & UJI COBA RLS (TEST IMPERSONATION) -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] p-5 space-y-4">
+<div class="flex items-center gap-2.5 pb-2 border-b border-[#E0ECE9]">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">science</span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">Panel Simulasi &amp; Uji Coba RLS</h3>
+<p class="text-label-sm font-label-sm text-outline">Uji isolasi data santri tanpa switch akun.</p>
+</div>
+</div>
+<div class="space-y-3">
+<label class="block text-label-md font-label-md text-on-surface font-semibold">
+                Pilih role untuk menguji akses database:
+              </label>
+<div class="relative">
+<select class="w-full px-3 py-2 rounded-lg text-body-sm font-body-sm bg-[#F7FAF9] border border-[#CFE2DE] text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none">
+<option selected="">Wali Santri: Hendra Gunawan</option>
+<option>Guru Tahfidz: Ustadz Salman Al-Farisi</option>
+<option>Bendahara: Ustadzah Siti Maryam</option>
+<option>Klien Anonim (Public Unauthenticated)</option>
+</select>
+</div>
+<!-- Impersonation Query Result Box -->
+<div class="p-3.5 rounded-lg bg-[#EFF7F5] border border-[#CFE2DE] space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-primary font-bold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                    Query: SELECT * FROM santri_rapor
+                  </span>
+<span class="text-emerald-700 bg-[#AEEED3] px-2 py-0.5 rounded text-[10px]">200 OK</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface leading-snug">
+                  Hanya <strong>1 baris</strong> dikembalikan: <span class="font-mono text-primary font-semibold">M. Faris Al-Fatih (NISN 014892210)</span>. Data 183 santri lainnya terisolasi sempurna.
+                </p>
+</div>
+<!-- Security Badge Verification -->
+<div class="p-3 rounded-lg bg-[#AEEED3]/40 border border-[#55A9A0]/40 flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
+<div class="text-label-sm font-label-sm">
+<span class="font-bold text-[#1A5C55] block">Uji Kebocoran Data (Data Leak Test): LOLOS</span>
+<span class="text-outline">0 Data Bocor • Row isolation status: Verified</span>
+</div>
+</div>
+<button class="w-full h-9 rounded-lg bg-primary-container text-on-primary hover:bg-[#216661] text-label-md font-label-md font-bold transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                Jalankan Automated Security Scan
+              </button>
+</div>
+</div>
+<!-- PANEL 2: KREDENSIAL & PENGATURAN SUPABASE API -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] p-5 space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-[#E0ECE9]">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#EFF7F5] text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface">Kredensial &amp; API Supabase</h3>
+</div>
+<span class="px-2 py-0.5 text-label-sm font-label-sm bg-[#AEEED3] text-[#1A5C55] font-bold rounded-full">
+                Tersambung
+              </span>
+</div>
+<div class="space-y-3 text-body-sm font-body-sm">
+<!-- Project URL -->
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-1 font-semibold">Project URL Supabase</label>
+<div class="flex items-center justify-between p-2 rounded-lg bg-[#F7FAF9] border border-[#CFE2DE] font-mono text-label-md">
+<span class="text-on-surface truncate">https://vabkqwzxt...supabase.co</span>
+<button class="text-outline hover:text-primary transition-colors ml-2" title="Salin URL">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Anon / Public Key -->
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-1 font-semibold">Anon / Public API Key</label>
+<div class="flex items-center justify-between p-2 rounded-lg bg-[#F7FAF9] border border-[#CFE2DE] font-mono text-label-md">
+<span class="text-on-surface truncate">eyJhbGciOiJIUzI1NiIsIn...</span>
+<button class="text-outline hover:text-primary transition-colors ml-2" title="Salin Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Service Role Key -->
+<div>
+<label class="block text-label-sm font-label-sm text-outline mb-1 font-semibold flex items-center justify-between">
+<span>Service Role Key (Secret)</span>
+<span class="text-error font-bold text-[10px] uppercase">Super Admin Only</span>
+</label>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-outline-variant font-mono text-label-md">
+<span class="text-outline tracking-widest">••••••••••••••••••••••••</span>
+<button class="text-outline hover:text-primary transition-colors ml-2" title="Buka dengan 2FA">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Database Webhooks -->
+<div class="pt-2 border-t border-[#E0ECE9] flex items-center justify-between">
+<div>
+<div class="text-label-md font-label-md font-bold text-on-surface">Database Webhook</div>
+<div class="text-label-sm font-label-sm text-outline">Notifikasi WA Keuangan &amp; Mutaba'ah</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-[#AEEED3] text-[#1A5C55]">
+                  Aktif
+                </span>
+</div>
+</div>
+</div>
+<!-- PANEL 3: LOG AKTIVITAS KEAMANAN REALTIME (LIVE AUDIT) -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E0ECE9] shadow-[0px_2px_8px_-2px_rgba(40,122,116,0.06)] p-5 space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-[#E0ECE9]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
+<h3 class="text-title-md font-title-md text-on-surface">Log Keamanan Realtime</h3>
+</div>
+<span class="flex items-center gap-1 text-[11px] font-bold text-[#287A74]">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                Live Audit
+              </span>
+</div>
+<!-- Activity List -->
+<div class="space-y-3.5 text-body-sm font-body-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-[#AEEED3] text-[#1A5C55] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">check</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium leading-snug">
+<strong>Otorisasi Sukses:</strong> Ustadzah Siti Maryam memverifikasi transfer <span class="font-mono text-label-sm text-[#287A74]">BSI-TRX-8829102</span>
+</p>
+<span class="text-label-sm font-label-sm text-outline">2 menit lalu • Supabase Audit Hook</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-error-container text-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">gpp_bad</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium leading-snug">
+<strong>Blokir Akses RLS:</strong> Anon key mencoba query tabel <code class="font-mono text-label-sm bg-[#EFF7F5] px-1 text-primary">users</code> (403 Forbidden)
+                  </p>
+<span class="text-label-sm font-label-sm text-outline">14 menit lalu • IP Balikpapan Transit</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-[#EFF7F5] text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface font-medium leading-snug">
+<strong>Sinkronisasi Auth:</strong> Akun baru wali santri Ahmad Dzaki berhasil dibuat.
+                  </p>
+<span class="text-label-sm font-label-sm text-outline">1 jam lalu • Auth Webhook</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border border-outline-variant rounded-lg text-outline hover:text-primary hover:bg-[#EFF7F5] text-label-md font-label-md font-bold transition-colors">
+              Lihat Semua Log Audit (Supabase Storage)
+            </button>
+</div>
+</div>
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- 7. FOOTER                                                                 -->
+<!-- ========================================================================= -->
+<footer class="mt-auto py-5 px-8 bg-surface-container-lowest border-t border-outline-variant/60 text-center text-label-sm font-label-sm text-outline">
+<p>
+        Copyright SDIT Balikpapan Islamic School • Modul Pengaturan Sistem &amp; Keamanan Database RLS Supabase • Server Balikpapan DC Online
+      </p>
+</footer>
+</div>
+</body></html>

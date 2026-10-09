@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PPDB &amp; Keuangan - SDIT Balikpapan Islamic School</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#00615b",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#353200",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#87d4cd",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#0b513d",
+            "on-secondary-fixed-variant": "#00504a",
+            "on-tertiary-fixed": "#002116",
+            "primary-container": "#287a74",
+            "primary-fixed": "#a3f1e9",
+            "on-secondary-container": "#097169",
+            "secondary": "#006a63",
+            "surface-bright": "#fffae0",
+            "on-surface-variant": "#3f4947",
+            "on-primary-fixed-variant": "#00504b",
+            "secondary-fixed": "#9ef2e7",
+            "on-primary": "#ffffff",
+            "outline": "#6f7977",
+            "outline-variant": "#bec9c7",
+            "surface-dim": "#e3dc97",
+            "inverse-on-surface": "#faf3ac",
+            "tertiary-fixed": "#b0f0d5",
+            "surface-container-low": "#fdf6ae",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#ece59f",
+            "secondary-fixed-dim": "#82d5cb",
+            "on-background": "#1e1c00",
+            "background": "#fffae0",
+            "surface-container": "#f7f0a9",
+            "on-surface": "#1e1c00",
+            "tertiary-container": "#3c7963",
+            "surface-container-high": "#f1eba4",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#9ef2e7",
+            "tertiary-fixed-dim": "#94d3b9",
+            "primary-fixed-dim": "#87d4cd",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#00201e",
+            "surface": "#fffae0",
+            "surface-tint": "#0e6a64",
+            "on-tertiary-container": "#c0ffe4",
+            "on-primary-container": "#bbfff8",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#ece59f",
+            "tertiary": "#20604b",
+            "on-secondary-fixed": "#00201d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #EFF7F5;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CFE2DE;
+      border-radius: 9999px;
+    }
+    .card-shadow-1 {
+      box-shadow: 0px 2px 8px -2px rgba(40, 122, 116, 0.06), 0px 1px 3px 0px rgba(40, 122, 116, 0.04);
+    }
+    .card-shadow-2 {
+      box-shadow: 0px 8px 24px -4px rgba(40, 122, 116, 0.10), 0px 2px 6px -1px rgba(40, 122, 116, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen selection:bg-secondary-container selection:text-primary">
+<!-- ==================== SIDEBAR NAVIGATION (SHARED COMPONENT: SideNavBar) ==================== -->
+<aside class="fixed left-0 top-0 h-full w-[260px] flex flex-col justify-between p-4 z-40 bg-surface-container-lowest border-r border-outline-variant">
+<div class="flex flex-col gap-4">
+<!-- School Portal Brand Header -->
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-title-md font-title-md font-bold text-primary truncate leading-tight">SDIT Balikpapan</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant truncate">Islamic School Portal</span>
+</div>
+</div>
+<!-- Quick Action CTA Button (Mutaba'ah) -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary-container text-on-primary text-label-md font-label-md transition-all duration-150 ease-in-out hover:opacity-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>Input Mutaba'ah</span>
+</button>
+<!-- Navigation Menu Cluster -->
+<nav class="flex flex-col gap-1 mt-2">
+<div class="px-3 pb-1.5 text-label-sm font-label-sm uppercase tracking-wider text-outline">Modul Terpadu</div>
+<!-- Tab 1: Akademik & KBM -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Akademik &amp; KBM</span>
+</a>
+<!-- Tab 2: Kekhasan SDIT -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+<span>Kekhasan SDIT</span>
+</a>
+<!-- Tab 3: Fasilitas Sekolah -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span>Fasilitas Sekolah</span>
+</a>
+<!-- Tab 4: Kesiswaan & Eskul -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">emoji_events</span>
+<span>Kesiswaan &amp; Eskul</span>
+</a>
+<!-- Tab 5: PPDB & Keuangan (ACTIVE TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-secondary-container text-primary font-label-md text-label-md border-l-4 border-primary shadow-sm transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-bold">PPDB &amp; Keuangan</span>
+<span class="ml-auto px-1.5 py-0.5 rounded-full bg-primary text-on-primary text-[10px] font-bold">12</span>
+</a>
+<!-- Tab 6: Pengaturan Sistem -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Pengaturan Sistem</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer -->
+<div class="flex flex-col gap-1 border-t border-outline-variant pt-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span>Bantuan &amp; Panduan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-error font-label-md text-label-md hover:bg-error-container transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="pl-[260px] min-h-screen flex flex-col bg-surface">
+<!-- ==================== TOP NAVIGATION BAR (SHARED COMPONENT: TopNavBar) ==================== -->
+<header class="sticky top-0 z-30 flex items-center justify-between w-full h-16 px-6 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-150 ease-in-out">
+<!-- Search Bar -->
+<div class="flex items-center gap-3 w-1/3 min-w-[320px]">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface border border-outline-variant text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari nomor invoice, santri, calon siswa PPDB..." type="text"/>
+</div>
+</div>
+<!-- Top Right Actions & User Profile -->
+<div class="flex items-center gap-5">
+<!-- Date Badge (Hijri & Masehi) -->
+<div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/40 border border-secondary-container text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>14 Ramadhan 1445 H • 25 Maret 2024</span>
+</div>
+<!-- Notification Bell Icon with Badge -->
+<button class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error text-[10px] font-bold ring-2 ring-surface-container-lowest">
+            12
+          </span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<!-- User Profile Card -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="text-label-lg font-label-lg text-on-surface leading-tight font-bold">Ustadz Ahmad Fauzi, S.Pd.I</div>
+<div class="text-[11px] font-label-sm text-primary font-semibold">Bendahara &amp; Tim PPDB / Guru Kelas 4 Ali</div>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-primary-fixed flex items-center justify-center text-primary font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up professional portrait photo of an Indonesian Islamic school male educator wearing a neat white koko shirt and black peci songkok cap. He has a warm smile and serene expression, standing in front of an Islamic school library with soft bright morning sunlight and botanical teal tones. The aesthetic is modern, disciplined, high-key light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9cVa9bZSlAf5txMloXPulByAFVobkZnpFYLpjEjlu-pl_1k1mCvvGZAJ0AgXNaSalYfQRTCzkD0LWXA-2cDJLZt5GcK-XBOXyQNWqD61Mj5rRMJqC7hSNUg1kgY9DNtI5ftcrWqSST4XZ6lMbBm5kSn1yApag8FQ-luK1HbZddrUH8xFKzmAHBmSCqYDEVlELBhPIBcbcy0L7Nw9Ec34DStvAwI4K0bOQLtePGte5WifedJ2nHsc40Q"/>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN PAGE BODY ==================== -->
+<main class="flex-1 p-6 lg:p-8 max-w-[1440px] w-full mx-auto space-y-6">
+<!-- Breadcrumbs & Header Section -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-2">
+<div>
+<!-- Breadcrumb Hierarchy -->
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-outline mb-1.5">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-outline">Administrasi Keuangan &amp; PPDB</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Monitoring SPP &amp; Verifikasi Transfer</span>
+</nav>
+<h1 class="text-headline-md lg:text-headline-lg font-headline-lg text-primary tracking-tight">
+            Manajemen Keuangan SPP &amp; Administrasi PPDB TA 2024/2025
+          </h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-3xl mt-1">
+            Pusat rekonsiliasi SPP syahriah bulanan, verifikasi bukti transfer wali murid, serta alur seleksi &amp; observasi calon santri baru SDIT Balikpapan.
+          </p>
+</div>
+<!-- Top Right Page Action Buttons -->
+<div class="flex items-center flex-wrap gap-2.5">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md hover:bg-secondary-container/30 transition-all card-shadow-1">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Rekening Bank Syariah</span>
+</button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md hover:bg-secondary-container/30 transition-all card-shadow-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Rekap (PDF/Excel)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Buat Invoice Massal</span>
+</button>
+</div>
+</div>
+<!-- 4 Ringkasan Stat Cards (Bento-style Grid) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric Card 1: SPP Ramadhan -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-secondary-container/20 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-outline">Realisasi SPP Ramadhan</span>
+<span class="p-1.5 rounded-lg bg-secondary-container text-primary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</span>
+</div>
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface">Rp 142.850.000</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Target: Rp 152.000.000</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1.5">
+<span class="text-primary font-bold">94% Terkumpul</span>
+<span class="text-outline">42 Santri Belum Bayar</span>
+</div>
+<div class="w-full bg-surface-variant/40 rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+</div>
+<!-- Metric Card 2: Bukti Transfer Menunggu Approval -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-surface-container-low/40 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-outline">Verifikasi Bukti Transfer</span>
+<span class="p-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</span>
+</div>
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface flex items-baseline gap-2">
+<span>12 Transaksi</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface font-semibold">
+                Perlu Tindakan
+              </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Total Nominal: Rp 18.600.000</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Antrean audit hari ini</span>
+<span class="text-label-sm font-label-sm text-primary font-bold flex items-center gap-1">
+              Audit Sekarang <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Metric Card 3: PPDB Gelombang 2 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-secondary-container/20 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-outline">Pendaftar PPDB Gelombang 2</span>
+<span class="p-1.5 rounded-lg bg-tertiary-fixed text-primary">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+</span>
+</div>
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface">148 Calon Santri</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Kuota: 160 Kursi (Sisa 12 Kursi)</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1.5">
+<span class="text-primary font-bold">105 Lulus Observasi</span>
+<span class="text-outline">43 Dalam Proses</span>
+</div>
+<div class="w-full bg-surface-variant/40 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 92.5%"></div>
+</div>
+</div>
+</div>
+<!-- Metric Card 4: Infaq & Donasi Ramadhan -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-surface-variant/30 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-outline">Infaq &amp; Donasi Ramadhan</span>
+<span class="p-1.5 rounded-lg bg-secondary-container/70 text-primary">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</span>
+</div>
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface">Rp 28.450.000</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">ZISWAF &amp; Santunan Yatim Dhuafa</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/60 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-primary font-semibold">Tersalurkan Rp 15.000.000</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-primary font-bold">Amanah</span>
+</div>
+</div>
+</section>
+<!-- Sub-Modul Tab Navigation -->
+<div class="border-b border-outline-variant flex items-center gap-2 overflow-x-auto custom-scrollbar">
+<button class="flex items-center gap-2 px-4 py-3 border-b-2 border-primary text-primary font-label-md text-label-md font-bold whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verifikasi Transfer &amp; Pembayaran SPP (12 Antrean)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-outline hover:text-primary font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Buku Kas &amp; Riwayat SPP Rombel</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-outline hover:text-primary font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>PPDB 2024/2025: Jalur Reguler &amp; Prestasi Tahfidz</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-outline hover:text-primary font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+<span>Infaq Sarpras &amp; Tabungan Qurban Santri</span>
+</button>
+</div>
+<!-- Main Layout Grid: 65% Kiri & 35% Kanan -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ==================== KOLOM KIRI (65% -> 8 Kolom) ==================== -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Filter & Search Toolbar -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex flex-col md:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 w-full md:w-auto flex-1">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">filter_list</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary" placeholder="Filter nama santri, NISN, atau no invoice..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<!-- Select Rombel -->
+<select class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary">
+<option selected="">Kelas 4 Ali bin Abi Thalib</option>
+<option>Semua Rombel (Kelas 1 - 6)</option>
+<option>Kelas 1 Abu Bakar Ash-Shiddiq</option>
+<option>Kelas 2 Umar bin Khattab</option>
+<option>Kelas 3 Utsman bin Affan</option>
+<option>Pendaftar Calon Santri PPDB</option>
+</select>
+<!-- Select Status -->
+<select class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary">
+<option selected="">Status: Menunggu Approval (12)</option>
+<option>Semua Status Transaksi</option>
+<option>Terverifikasi Otomatis / Kasir</option>
+<option>Ditolak / Konfirmasi Ulang</option>
+</select>
+</div>
+</div>
+<!-- Transaction List Cards Container -->
+<div class="space-y-3">
+<!-- Item 1: Muhammad Faris Al-Fatih (Pending Approval) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border-2 border-primary/40 card-shadow-2 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-outline-variant/60">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-lg bg-secondary-container/60 border border-secondary-container flex items-center justify-center text-primary font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">Muhammad Faris Al-Fatih</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface text-label-sm font-label-sm font-bold border border-surface-variant">
+                        Menunggu Approval
+                      </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-2 mt-0.5">
+<span>NISN: 014892210</span>
+<span>•</span>
+<span class="text-primary font-semibold">Kelas 4 Ali bin Abi Thalib</span>
+<span>•</span>
+<span>Hari ini, 09:15 WITA</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">Rp 850.000</div>
+<div class="text-label-sm font-label-sm text-outline">BSI Hasanah Mobile • Ref: 8829102</div>
+</div>
+</div>
+<!-- Breakdown & Action Buttons -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface text-on-surface-variant border border-outline-variant text-label-sm font-label-sm">
+                    Tagihan: SPP Maret 2024 (Rp 650.000)
+                  </span>
+<span class="px-2.5 py-1 rounded-md bg-secondary-container/40 text-primary border border-secondary-container text-label-sm font-label-sm">
+                    + Infaq Ramadhan (Rp 200.000)
+                  </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Lihat Resi</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-error/30 text-error font-label-md text-label-md hover:bg-error-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Tolak</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Setujui (Kirim WA)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Aisyah Nur Ramadhani (Terverifikasi Otomatis) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-outline-variant/60">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed/60 border border-tertiary-fixed flex items-center justify-center text-primary font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">person_3</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">Aisyah Nur Ramadhani</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-primary text-label-sm font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Terverifikasi Otomatis
+                      </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-2 mt-0.5">
+<span>NISN: 0148922109</span>
+<span>•</span>
+<span class="text-primary font-semibold">Kelas 4 Ali bin Abi Thalib</span>
+<span>•</span>
+<span>Hari ini, 08:30 WITA</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface">Rp 650.000</div>
+<div class="text-label-sm font-label-sm text-outline">Bank Muamalat (BMI VA) • Auto-settled</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface text-on-surface-variant border border-outline-variant text-label-sm font-label-sm">
+                    Tagihan: SPP Maret 2024 (Lunas)
+                  </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-primary font-label-md text-label-md hover:bg-secondary-container/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>Kwitansi Terbit #KW-0928</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Raffasya Dwi Putra (Pending Approval) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-outline-variant/60">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-lg bg-secondary-container/60 border border-secondary-container flex items-center justify-center text-primary font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">Raffasya Dwi Putra</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface text-label-sm font-label-sm font-bold border border-surface-variant">
+                        Menunggu Approval
+                      </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-2 mt-0.5">
+<span>NISN: 0148922144</span>
+<span>•</span>
+<span class="text-primary font-semibold">Kelas 4 Ali bin Abi Thalib</span>
+<span>•</span>
+<span>Kemarin, 19:40 WITA</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">Rp 500.000</div>
+<div class="text-label-sm font-label-sm text-outline">BSI Hasanah • Slip ATM Manual</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface text-on-surface-variant border border-outline-variant text-label-sm font-label-sm">
+                    Tagihan: SPP Maret 2024 (Subsidi Beasiswa Yatim)
+                  </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">image</span>
+<span>Slip ATM</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Setujui</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Ahmad Dzaki Robbani (PPDB Calon Santri Baru) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-outline-variant/60">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-lg bg-secondary-fixed/50 border border-secondary-fixed flex items-center justify-center text-primary font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">Ahmad Dzaki Robbani</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-primary text-label-sm font-label-sm font-bold">
+                        Calon Santri PPDB
+                      </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-2 mt-0.5">
+<span>No Reg: PPDB-2024-089</span>
+<span>•</span>
+<span class="text-primary font-semibold">Jalur Reguler Gelombang 2</span>
+<span>•</span>
+<span>24 Maret 2024</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">Rp 350.000</div>
+<div class="text-label-sm font-label-sm text-outline">QRIS BSI • Biaya Observasi &amp; Psikotes</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface text-on-surface-variant border border-outline-variant text-label-sm font-label-sm">
+                    Biaya Formulir &amp; Observasi Kematangan
+                  </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Verifikasi Berkas PPDB</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5: Zaid bin Tsabit Jr. (Terverifikasi Bendahara) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-outline-variant/60">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed/60 border border-tertiary-fixed flex items-center justify-center text-primary font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md font-bold text-on-surface">Zaid bin Tsabit Jr.</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-primary text-label-sm font-label-sm font-bold">
+                        Terverifikasi Bendahara
+                      </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-2 mt-0.5">
+<span>NISN: 0148922177</span>
+<span>•</span>
+<span class="text-primary font-semibold">Kelas 4 Ali bin Abi Thalib</span>
+<span>•</span>
+<span>Diverifikasi oleh Ust. Ahmad Fauzi</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface">Rp 550.000</div>
+<div class="text-label-sm font-label-sm text-outline">Setoran Tunai Kasir Sekolah</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface text-on-surface-variant border border-outline-variant text-label-sm font-label-sm">
+                    SPP Maret 2024 &amp; Iuran Eskul Catur
+                  </span>
+</div>
+<div>
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-primary font-label-md text-label-md hover:bg-secondary-container/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Cetak Kwitansi Manual</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination Bar -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Menampilkan 1 - 5 dari 12 antrean transfer masuk</span>
+<div class="flex items-center gap-1.5">
+<button class="p-1 rounded-md border border-outline-variant text-outline hover:text-primary disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded-md bg-primary text-on-primary font-bold text-label-md">1</button>
+<button class="px-3 py-1 rounded-md hover:bg-surface border border-outline-variant text-on-surface text-label-md">2</button>
+<button class="px-3 py-1 rounded-md hover:bg-surface border border-outline-variant text-on-surface text-label-md">3</button>
+<button class="p-1 rounded-md border border-outline-variant text-outline hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ==================== KOLOM KANAN (35% -> 4 Kolom) ==================== -->
+<div class="lg:col-span-4 space-y-4">
+<!-- Card 1: Audit Panel Pemeriksaan Cepat Bukti Transfer -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-2">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">policy</span>
+<h2 class="text-title-md font-title-md text-on-surface font-bold">Audit Cepat Bukti Transfer</h2>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-primary font-bold">
+                Item #1 Aktif
+              </span>
+</div>
+<!-- Receipt Visual Preview Box -->
+<div class="mt-4 p-4 rounded-xl bg-surface border border-outline-variant relative">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline border-b border-outline-variant/60 pb-2">
+<span>Bukti Resi M-Banking (BSI)</span>
+<span class="text-primary font-bold">Terverifikasi OCR 100%</span>
+</div>
+<div class="py-3 space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between">
+<span class="text-outline">Wali Murid (Pengirim):</span>
+<span class="font-bold text-on-surface">Bpk. Hendra Gunawan</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Santri:</span>
+<span class="font-semibold text-primary">M. Faris Al-Fatih (4 Ali)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">No. Referensi:</span>
+<span class="font-mono text-[12px] bg-secondary-container/40 px-1.5 py-0.5 rounded text-primary">BSI-TRX-8829102</span>
+</div>
+<div class="flex justify-between items-baseline pt-1">
+<span class="text-outline">Nominal Tertera:</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">Rp 850.000</span>
+</div>
+</div>
+<!-- Automated Reconciliation Checklist -->
+<div class="mt-2 p-2.5 rounded-lg bg-surface-container-lowest border border-secondary-container space-y-1.5">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Mutasi BSI Internet Banking Match (Rp 850.000)</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Nominal Sesuai Invoice Maret (Tagihan #INV-4410)</span>
+</div>
+</div>
+</div>
+<!-- Quick Audit Action Buttons -->
+<div class="mt-4 space-y-2">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center justify-center gap-2 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Validasi &amp; Terbitkan Kwitansi PDF</span>
+</button>
+<button class="w-full py-2 px-4 rounded-lg bg-surface border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Minta Upload Ulang via WA</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Progres Penerimaan Calon Santri (PPDB 2024/2025) -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">domain_verification</span>
+<h2 class="text-title-md font-title-md text-on-surface font-bold">Progres Kuota PPDB 2024</h2>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Target: 4 Rombel</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">148 / 160 Santri</span>
+<span class="text-title-md font-title-md text-primary font-bold">92.5% Kuota</span>
+</div>
+<div class="w-full bg-surface-variant/40 rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92.5%"></div>
+</div>
+<p class="text-[12px] font-body-sm text-outline mt-1.5">Tersisa 12 kursi kosong sebelum pendaftaran ditutup.</p>
+</div>
+<!-- Breakdown PPDB Status -->
+<div class="mt-4 space-y-2.5 pt-3 border-t border-outline-variant/60 text-body-sm font-body-sm">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Lulus &amp; Lunas Uang Pangkal</span>
+</div>
+<span class="font-bold text-on-surface">105 santri</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span>Tahap Observasi &amp; Tes Adab</span>
+</div>
+<span class="font-bold text-on-surface">15 santri</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span>Pendaftar Baru &amp; Berkas Lengkap</span>
+</div>
+<span class="font-bold text-on-surface">28 santri</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1.5 text-primary text-label-md font-label-md font-bold hover:underline" href="#">
+<span>Lihat Daftar Calon Siswa PPDB &amp; Hasil Tes</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3: Rekening Resmi Kas Yayasan SDIT Balikpapan -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant card-shadow-1">
+<div class="flex items-center gap-2 pb-3 border-b border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+<h2 class="text-title-md font-title-md text-on-surface font-bold">Rekening Kas Yayasan SDIT</h2>
+</div>
+<div class="mt-4 space-y-3">
+<!-- BSI Card -->
+<div class="p-3.5 rounded-xl bg-secondary-container/30 border border-secondary-container">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-primary">Bank Syariah Indonesia (BSI)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary text-[10px] font-bold">VA &amp; QRIS</span>
+</div>
+<div class="text-title-md font-mono font-bold text-on-surface mt-1 tracking-wider">7182-9901-22</div>
+<div class="text-[12px] text-outline mt-0.5">a.n Yayasan Balikpapan Islamic School</div>
+</div>
+<!-- BMI Card -->
+<div class="p-3.5 rounded-xl bg-surface border border-outline-variant">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-on-surface">Bank Muamalat Indonesia (BMI)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface text-[10px] font-bold">Giro Operasional</span>
+</div>
+<div class="text-title-md font-mono font-bold text-on-surface mt-1 tracking-wider">602-0012-333</div>
+<div class="text-[12px] text-outline mt-0.5">a.n SDIT Balikpapan Rekening SPP</div>
+</div>
+<div class="flex items-center gap-2 pt-2 text-[12px] text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>API Gateway BSI &amp; BMI Sinkronisasi Real-time Aktif</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ==================== FOOTER SEKOLAH ==================== -->
+<footer class="mt-auto px-6 py-4 bg-surface-container-lowest border-t border-outline-variant text-body-sm font-body-sm text-outline flex flex-col md:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>Data Keuangan Terenkripsi RLS Supabase &amp; Audit Trail Bendahara Sekolah</span>
+</div>
+<div>
+        © 2024 SDIT Balikpapan Islamic School • Modul Administrasi PPDB &amp; Keuangan Syariah
+      </div>
+<div class="flex items-center gap-2 text-primary font-semibold text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Terkoneksi Gateway Perbankan Syariah &amp; SMS/WA Notifier</span>
+</div>
+</footer>
+</div>
+</body></html>

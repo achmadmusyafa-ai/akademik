@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Icon } from './ui'
 
 const NAV = [
-  { label: 'Akademik & KBM', icon: 'menu_book', to: '/' },
+  { label: 'Akademik & KBM', icon: 'menu_book', to: '/akademik', match: ['/', '/akademik', '/manajemen-kbm'] },
   { label: 'Kekhasan SDIT', icon: 'auto_stories', to: '/kekhasan' },
   { label: 'Fasilitas Sekolah', icon: 'domain', to: '/fasilitas' },
   { label: 'Kesiswaan & Eskul', icon: 'emoji_events', to: '/kesiswaan' },
@@ -46,7 +46,7 @@ export default function Sidebar({ open, onClose }) {
 
           <nav className="flex flex-col gap-1">
             {NAV.map((item) => {
-              const active = pathname === item.to
+              const active = item.match ? item.match.includes(pathname) : pathname === item.to
               return (
                 <Link
                   key={item.label}

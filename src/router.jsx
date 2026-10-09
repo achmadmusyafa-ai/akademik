@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import App from './App'
 import DashboardPage from './pages/DashboardPage'
 import KekhasanPage from './pages/kekhasan/KekhasanPage'
+import AkademikPage from './pages/akademik/AkademikPage'
 import FasilitasPage from './pages/fasilitas/FasilitasPage'
 import KesiswaanPage from './pages/kesiswaan/KesiswaanPage'
 
@@ -20,6 +21,8 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <DashboardPage /> },
+      { path: 'akademik', element: <AkademikPage /> },
+      { path: 'manajemen-kbm', element: <AkademikPage /> },
       { path: 'kekhasan', element: <KekhasanPage /> },
       { path: 'fasilitas', element: <FasilitasPage /> },
       { path: 'kesiswaan', element: <KesiswaanPage /> },
